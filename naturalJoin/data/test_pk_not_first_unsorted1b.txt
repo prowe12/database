@@ -1,0 +1,5 @@
+#first|last|ssn
+L|D|2
+K|R|3
+P|R|0
+S|N|1
