@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class Relation {
     public ArrayList<String> attributes;
-    public Tuple tuples; //ArrayList<String[]> tuples;
+    public Tuple tuples;
     public String sortedOn;
 
     /**
@@ -51,7 +51,7 @@ public class Relation {
      */
     public Relation(Relation rel) {
         attributes = new ArrayList<String>();
-        tuples = new Tuple(); //new ArrayList<String[]>();
+        tuples = new Tuple(rel.tuples);
         sortedOn = rel.sortedOn;
 
         // Add the original attributes
@@ -59,10 +59,8 @@ public class Relation {
             attributes.add(att);
         }
 
-        // TODO: Does this deep copy?
-        // Add the tuples
-        tuples.addall(rel.tuples);
-
+        // Add the tuples (shallow copy)
+        // tuples.addall(rel.tuples);
     }
 
     /**

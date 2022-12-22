@@ -15,22 +15,22 @@ public class EndToEndTests {
      * @throws IllegalArgumentException
      */
     public static void main(String args[])  {
-        // testNestedLoopJoinsWithSelf();  // Natural join with self
-        // testNestedLoopJoinsCartesian();  // Cases where no attributes are shared
-        // testNestedLoopJoinsEmpty();  // Cases where attributes are shared, but none match
-        // testNestedLoopJoins();  // Cases where attributes are shared with shared values
-        // testPkNotFirstHash();
-        // testPkNotFirstSortMerge();
-        // testPkNotFirstNestedLoop();
-        // testPkNotFirstUnsortedSortMerge();
-        // testPkNotFirstUnsortedNestedLoop();
-        // testPkNotFirstUnsortedHash();
-        // testNestedLoopJoin();
-        // testSortMergeJoin();
-        // testHashJoin();
+        testNestedLoopJoinsWithSelf();  // Natural join with self
+        testNestedLoopJoinsCartesian();  // Cases where no attributes are shared
+        testNestedLoopJoinsEmpty();  // Cases where attributes are shared, but none match
+        testNestedLoopJoins();  // Cases where attributes are shared with shared values
+        testPkNotFirstHash();
+        testPkNotFirstSortMerge();
+        testPkNotFirstNestedLoop();
+        testPkNotFirstUnsortedSortMerge();
+        testPkNotFirstUnsortedNestedLoop();
+        testPkNotFirstUnsortedHash();
+        testNestedLoopJoin();
+        testSortMergeJoin();
+        testHashJoin();
     
         // The following throw errors, so they must be tested one at a time
-        testNestedLoopJoinsMissingRelation();
+        // testNestedLoopJoinsMissingRelation();
     }
 
     

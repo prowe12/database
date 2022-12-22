@@ -30,10 +30,13 @@ public class RelationUtil {
         }
 
         // Loop over file names and load in the relation if the file is the proper type
+        // Store relations in hashmap with key,value = name,relation
+        // where the name is always lower case
         for(int i=0; i<contents.length; i++) {
             if (contents[i].charAt(0) != '.' & contents[i].endsWith(".txt")) {
                 relationname = contents[i];
                 relationname = relationname.replace(".txt", "");
+                relationname = relationname.toLowerCase();
                 
                 Relation tmprelation = new Relation(direc + contents[i]);
                 relations.put(relationname, tmprelation);
@@ -64,7 +67,7 @@ public class RelationUtil {
      * 
      */
     public static Relation naturalJoin(Relation rel1, Relation rel2, String method) {
-        boolean verbose = true;  // Flag to print output to console
+        boolean verbose = true;  // Flag for whether to print output to console
         Relation joinedRel = null;
 
         // Throw error if relations do not exist
@@ -219,8 +222,7 @@ public class RelationUtil {
         atts3.addAllButPrimaryKey(atts2);
         Relation rel3 = new Relation(atts3.get());
 
-        // Phase I: Hash every tuple of R by the value 
-        // of the common attribute
+        // Phase I: Hash every tuple of R by the value of the common attribute
         // TODO have we sufficiently checked if the common attribute values are unique?
         HashMap<String,String[]> map = new HashMap<String,String[]>();
         for (String[] tuple1: rel1.getTuples()) {

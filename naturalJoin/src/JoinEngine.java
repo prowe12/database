@@ -35,8 +35,11 @@ public class JoinEngine {
         System.out.println("Enter the second relation for the natural join:");
         String relation2name = myObj.nextLine();  // Read user input
         
+        // Convert entered relations to lower case
+        relation1name = relation1name.toLowerCase();
+        relation2name = relation2name.toLowerCase();
+
         // If any relations they entered do not exist (case insensitive), throw an IllegalArgumentException and exit. 
-        // TODO: make case insensitive
         if (!(relations.containsKey(relation1name))) {
             myObj.close();  // closes the scanner
             throw new IllegalArgumentException("Relation " + relation1name + " does not exist");

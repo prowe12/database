@@ -11,20 +11,27 @@ class Tuple  {
     public ArrayList<String[]> tuples;
 
     /**
-     * Tuple constructor
+     * Tuple constructor with no inputs
      */
-    public Tuple(){
+    public Tuple() {
         tuples = new ArrayList<String[]>();
+    }
+
+    /**
+     * Tuple constructor with list of tuples as input
+     */
+    public Tuple(Tuple inputTuple) {
+        tuples = new ArrayList<String[]>(inputTuple.getAll());
     }
 
     /**
      * Add list of tuples
      */
-    public void addall(Tuple newtuples) {
-        for (String[] newtuple:newtuples.tuples) {
-            tuples.add(newtuple);
-        }
-    }
+    // public void addall(Tuple newtuples) {
+    //     for (String[] newtuple:newtuples.tuples) {
+    //         tuples.add(newtuple);
+    //     }
+    // }
 
     /**
      * Add a tuple to the end
